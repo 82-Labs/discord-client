@@ -8,8 +8,7 @@
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
     "lint": "biome check .",
-    "lint:fix": "biome check --write .",
-    "dev:docker": "sh ./scripts/docker-dev.sh"
+    "lint:fix": "biome check --write ."
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.15",
