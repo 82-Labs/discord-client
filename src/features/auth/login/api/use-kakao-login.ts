@@ -3,7 +3,7 @@ import { useMutation } from "@tanstack/react-query";
 import { requestKy } from "~/shared/api/ky";
 
 const kakaoLogin = async (code: string) => {
-  const response = await requestKy.post("auth/kakao", {
+  const response = await requestKy.post("api/v1/auth/kakao", {
     body: JSON.stringify({ code }),
   });
   return response;
