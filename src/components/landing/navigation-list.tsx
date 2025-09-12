@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router";
 import { useSelectMenu } from "~/pages/landing/lib/use-select-menu";
 import { NAVIGATION_LINKS } from "~shared/constants";
-import { mergeClasses } from "~shared/utils";
+import { cn } from "~/shared/lib";
 
 interface NavigationListProps {
   type: "mobile" | "desktop";
@@ -18,14 +18,14 @@ export default function NavigationList({ type }: NavigationListProps) {
     case "desktop":
       return (
         <ul
-          className={mergeClasses(
+          className={cn(
             "hidden lg:flex xl:gap-0.5  text-white text-xs xl:text-base relative",
           )}
         >
           {NAVIGATION_LINKS.map((link, index) => (
             <li
               key={`${link.href} + ${index}`}
-              className={mergeClasses(
+              className={cn(
                 "group relative flex items-center justify-center rounded-2xl h-10 py-1 px-2 xl:py-2.5 xl:px-4 hover:bg-discord hover:text-white transition-all duration-300",
                 link.type === "popover" && "hover:bg-discord hover:text-white",
               )}
@@ -39,7 +39,7 @@ export default function NavigationList({ type }: NavigationListProps) {
 
               {link.type === "popover" && (
                 <div
-                  className={mergeClasses(
+                  className={cn(
                     "group group-hover:flex hidden text-white absolute top-11 -left-1/2 -translate-x-1/4 p-4 rounded-6xl w-fit bg-discord ",
                     link.popoverAlign === "row" ? "flex-row" : "flex-col",
                   )}
@@ -47,7 +47,7 @@ export default function NavigationList({ type }: NavigationListProps) {
                   {link.popoverSections?.map((section) => (
                     <div
                       key={section.title}
-                      className={mergeClasses(
+                      className={cn(
                         "text-nowrap py-4 px-8 first:border-r first:border-zinc-400/20",
                         link.popoverSections?.length &&
                           link.popoverSections?.length <=

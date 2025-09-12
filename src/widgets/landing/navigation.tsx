@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { mergeClasses } from "~/shared/utils";
+import { cn } from "~/shared/lib";
 import NavigationList from "~components/landing/navigation-list";
 import { KakaoLoginButton } from "~features/auth/login/ui";
 import { useToggle } from "~shared/hooks/use-toggle";
@@ -34,14 +34,14 @@ export default function Navigation() {
       </div>
 
       <div
-        className={mergeClasses(
+        className={cn(
           "fixed top-0 left-0 w-full h-screen bg-[#000c] z-10 transition-all duration-300",
           isOpen ? "block" : "hidden",
         )}
       />
 
       <div
-        className={mergeClasses(
+        className={cn(
           "block lg:hidden fixed top-0 right-0 w-full sm:w-1/2 h-screen bg-discord sm:rounded-l-5xl overflow-hidden ml-auto z-10 transition-all duration-500",
           isOpen ? "translate-x-0" : "translate-x-full",
         )}
