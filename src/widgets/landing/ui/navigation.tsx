@@ -1,7 +1,7 @@
 import { Link } from "react-router";
-import { cn } from "~/shared/lib";
-import NavigationList from "~components/landing/navigation-list";
-import { KakaoLoginButton } from "~features/auth/login/ui";
+import { cn } from "~shared/lib";
+import NavigationList from "~widgets/landing/ui/navigation-list";
+import KakaoAuthButton from "~features/auth/kakao/ui/kakao-auth-button";
 import { useToggle } from "~shared/hooks/use-toggle";
 
 export default function Navigation() {
@@ -22,7 +22,7 @@ export default function Navigation() {
       <NavigationList type="desktop" />
 
       <div className="fixed top-4 right-4 md:top-10 md:right-10 z-10 flex items-center gap-5">
-        <KakaoLoginButton />
+        <KakaoAuthButton />
 
         <button
           type="button"

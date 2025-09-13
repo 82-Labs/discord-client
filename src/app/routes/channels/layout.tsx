@@ -1,5 +1,5 @@
 import { Outlet } from "react-router";
-import ChannelsHeader from "~/components/channels/header/ui/channels-header";
+import ChannelsHeader from "~widgets/channels/ui/channels-header";
 
 export default function ChannelsLayout() {
   return (

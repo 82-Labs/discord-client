@@ -1,4 +1,4 @@
-import Navigation from "~widgets/landing/navigation";
+import Navigation from "~widgets/landing/ui/navigation";
 
 export default function LandingPage() {
   return (

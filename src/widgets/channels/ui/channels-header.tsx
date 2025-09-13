@@ -7,10 +7,10 @@ import {
 } from "~/shared/ui/dropdown-menu";
 import { Tooltip, TooltipTrigger, TooltipContent } from "~shared/ui/tooltip";
 
-import { SendMailBox } from "./send-mail-box";
-import { FriendsIcon } from "./icons/friends-icon";
-import { MailBoxIcon } from "./icons/mail-box-icon";
-import { SupportIcon } from "./icons/support-icon";
+import { SendMailBox } from "~entities/notification/ui/send-mail-box";
+import { FriendsIcon } from "~entities/notification/ui/icons/friends-icon";
+import { MailBoxIcon } from "~entities/notification/ui/icons/mail-box-icon";
+import { SupportIcon } from "~entities/notification/ui/icons/support-icon";
 
 export default function ChannelsHeader() {
   return (

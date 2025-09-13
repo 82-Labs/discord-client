@@ -1,6 +1,6 @@
-import { redirectToKakaoAuth } from "~features/auth/login/lib/redirect-to-kakao-auth";
+import { redirectToKakaoAuth } from "~features/auth/kakao/lib/redirect-to-kakao-auth";
 
-export function KakaoLoginButton() {
+export default function KakaoAuthButton() {
   return (
     <button
       className="cursor-pointer "

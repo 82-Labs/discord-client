@@ -1,14 +1,6 @@
-import type { Route } from "../+types/landing";
-import { useKakaoLogin } from "~/features/auth/login/api/use-kakao-login";
+import { useKakaoLogin } from "~features/auth/kakao/api/use-kakao-login";
 
-export function meta(_: Route.MetaArgs) {
-  return [
-    { title: "Discord Clone - 카카오 로그인" },
-    { name: "description", content: "카카오 로그인 중입니다." },
-  ];
-}
-
-export default function KakaoCallback() {
+export default function KakaoCallbackPage() {
   useKakaoLogin();
 
   return (
