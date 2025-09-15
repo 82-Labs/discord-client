@@ -1,21 +1,20 @@
-import { createCookieSessionStorage } from "react-router";
+import { createCookie } from "react-router";
 
-export const ACCESS_TOKEN_NAME = "discordCloneAccessToken";
-export const REFRESH_TOKEN_NAME = "discordCloneRefreshToken";
+export const ACCESS_TOKEN_NAME = "accessToken";
+export const REFRESH_TOKEN_NAME = "refreshToken";
 
-const secret = process.env.COOKIE_SECRET;
-if (!secret) {
-  throw new Error("Missing COOKIE_SECRET");
-}
+export const accessTokenCookie = createCookie(ACCESS_TOKEN_NAME, {
+  httpOnly: false,
+  sameSite: "lax",
+  secure: process.env.NODE_ENV === "production",
+  path: "/",
+  maxAge: 60 * 60 * 24,
+});
 
-export const accessTokenStorage = createCookieSessionStorage({
-  cookie: {
-    name: "discordCloneAccessToken",
-    httpOnly: true,
-    sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
-    path: "/",
-    secrets: [secret],
-    maxAge: 60 * 60 * 24,
-  },
+export const refreshTokenCookie = createCookie(REFRESH_TOKEN_NAME, {
+  httpOnly: false,
+  sameSite: "lax",
+  secure: process.env.NODE_ENV === "production",
+  path: "/",
+  maxAge: 60 * 60 * 24,
 });
