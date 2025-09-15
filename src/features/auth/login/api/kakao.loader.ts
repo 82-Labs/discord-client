@@ -1,8 +1,12 @@
 import { type LoaderFunctionArgs, redirect } from "react-router";
+import { z } from "zod";
 import { accessTokenCookie, refreshTokenCookie } from "~/shared/server/cookie";
 import { requestKy } from "~shared/api/ky";
 
-type KakaoLoginResponse = { accessToken: string; refreshToken: string | null };
+const KakaoLoginResponseSchema = z.object({
+  accessToken: z.string().min(10),
+  refreshToken: z.string().min(10).nullable(),
+});
 
 export const kakaoLoader = async ({ request }: LoaderFunctionArgs) => {
   const url = new URL(request.url);
@@ -10,11 +14,10 @@ export const kakaoLoader = async ({ request }: LoaderFunctionArgs) => {
 
   const response = await requestKy.post("auth/kakao", {
     json: { code },
-    throwHttpErrors: false,
   });
 
-  const { accessToken, refreshToken } =
-    (await response.json()) as KakaoLoginResponse;
+  const json = (await response.json()) as unknown;
+  const { accessToken, refreshToken } = KakaoLoginResponseSchema.parse(json);
 
   const headers = new Headers();
   headers.append("Set-Cookie", await accessTokenCookie.serialize(accessToken));
