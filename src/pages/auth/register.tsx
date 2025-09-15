@@ -10,7 +10,7 @@ export default function RegisterPage() {
       <main className="w-full max-w-md  bg-discord-gray h-fit p-8 text-white rounded-xl z-10">
         <h1 className="text-2xl font-bold text-center mb-5">계정 만들기</h1>
 
-        <Form className=" flex flex-col gap-2 w-full mb-3">
+        <form className=" flex flex-col gap-2 w-full mb-3">
           <label htmlFor="username">
             사용자 명 <span className="text-red-500">*</span>
           </label>
@@ -52,7 +52,7 @@ export default function RegisterPage() {
           >
             계정 만들기
           </button>
-        </Form>
+        </form>
 
         <a href="/auth/login" className="text-sm text-blue-300/80">
           이미 계정이 있나요? 로그인하세요
