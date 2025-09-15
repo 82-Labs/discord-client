@@ -1,5 +1,5 @@
+import { kakaoLoader } from "~features/auth/login/api/kakao.loader";
 import type { Route } from "../+types/landing";
-import { useKakaoLogin } from "~/features/auth/login/api/use-kakao-login";
 
 export function meta(_: Route.MetaArgs) {
   return [
@@ -8,9 +8,9 @@ export function meta(_: Route.MetaArgs) {
   ];
 }
 
-export default function KakaoCallback() {
-  useKakaoLogin();
+export const loader = kakaoLoader;
 
+export default function KakaoCallback() {
   return (
     <main className="min-h-screen w-full bg-[#0b0d12] text-zinc-100 flex items-center justify-center p-6">
       <div className="relative w-full max-w-sm">
