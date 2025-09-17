@@ -5,9 +5,9 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
 } from "~/shared/ui/dropdown-menu";
-import { Tooltip, TooltipTrigger, TooltipContent } from "~shared/ui/tooltip";
+import { Tooltip, TooltipTrigger, TooltipContent } from "~/shared/ui/tooltip";
 
-import { SendMailBox } from "~entities/notification/ui/send-mail-box";
+import { SendMailBox } from "~/entities/notification/ui/send-mail-box";
 import { FriendsIcon } from "~/shared/ui/icons/friends-icon";
 import { MailBoxIcon } from "~/entities/notification/ui/icons/mail-box-icon";
 import { SupportIcon } from "~/entities/notification/ui/icons/support-icon";
@@ -35,16 +35,16 @@ export default function NotificationHeader() {
 
       <div className="absolute right-3 flex items-center gap-5 z-1 w-20">
         <DropdownMenu>
-          <DropdownMenuTrigger className="w-9 h-6 outline-none cursor-pointer hover:text-white transition-all delay-200">
-            <Tooltip>
-              <TooltipTrigger>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <DropdownMenuTrigger className="w-9 h-6 outline-none cursor-pointer hover:text-white transition-all delay-200">
                 <MailBoxIcon className="w-full h-full" />
-              </TooltipTrigger>
-              <TooltipContent className="p-2 text-sm bg-discord-gray h-full border-none **:*:fill-discord-gray  **:*:bg-discord-gray">
-                <span>받은 편지함</span>
-              </TooltipContent>
-            </Tooltip>
-          </DropdownMenuTrigger>
+              </DropdownMenuTrigger>
+            </TooltipTrigger>
+            <TooltipContent className="p-2 text-sm bg-discord-gray h-full border-none **:*:fill-discord-gray  **:*:bg-discord-gray">
+              <span>받은 편지함</span>
+            </TooltipContent>
+          </Tooltip>
           <DropdownMenuContent
             side="bottom"
             sideOffset={5}
