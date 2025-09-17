@@ -1,16 +1,4 @@
-import { kakaoLoader } from "~features/auth/login/api/kakao.loader";
-import type { Route } from "../+types/landing";
-
-export function meta(_: Route.MetaArgs) {
-  return [
-    { title: "Discord Clone - 카카오 로그인" },
-    { name: "description", content: "카카오 로그인 중입니다." },
-  ];
-}
-
-export const loader = kakaoLoader;
-
-export default function KakaoCallback() {
+export default function KakaoCallbackPage() {
   return (
     <main className="min-h-screen w-full bg-[#0b0d12] text-zinc-100 flex items-center justify-center p-6">
       <div className="relative w-full max-w-sm">

@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 import {
   DropdownMenu,
@@ -7,17 +7,32 @@ import {
 } from "~/shared/ui/dropdown-menu";
 import { Tooltip, TooltipTrigger, TooltipContent } from "~shared/ui/tooltip";
 
-import { SendMailBox } from "./send-mail-box";
-import { FriendsIcon } from "./icons/friends-icon";
-import { MailBoxIcon } from "./icons/mail-box-icon";
-import { SupportIcon } from "./icons/support-icon";
+import { SendMailBox } from "~entities/notification/ui/send-mail-box";
+import { FriendsIcon } from "~/shared/ui/icons/friends-icon";
+import { MailBoxIcon } from "~/entities/notification/ui/icons/mail-box-icon";
+import { SupportIcon } from "~/entities/notification/ui/icons/support-icon";
+import { LogoIcon } from "~/shared/ui/icons/logo-icon";
 
-export default function ChannelsHeader() {
+export default function NotificationHeader() {
+  const location = useLocation();
+
+  console.log(location.pathname);
+
   return (
-    <header className="relative flex items-center justify-center bg-discord-black text-sm h-8 text-gray-300/80">
+    <header className="relative hidden md:flex items-center justify-center bg-discord-black text-sm h-8 text-gray-300/80">
       <div className="flex items-center gap-2">
-        <FriendsIcon className="w-4 h-4" />
-        <span>친구</span>
+        {location.pathname === "/channels/@me" && (
+          <>
+            <FriendsIcon className="w-4 h-4" />
+            <span>친구</span>
+          </>
+        )}
+        {location.pathname.includes("/channels/@me/") && (
+          <>
+            <LogoIcon className="w-4 h-4" />
+            <span>다이렉트 메시지</span>
+          </>
+        )}
       </div>
 
       <div className="absolute right-3 flex items-center gap-5 z-1 w-20">

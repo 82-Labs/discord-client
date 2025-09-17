@@ -11,20 +11,42 @@
   --color-light-discord: #93a7fd;
   --color-kakao: #fee403;
 
-  --color-discord-black: #202225;
+  --color-discord-black: #2c2d32;
   --color-discord-gray: #393a41;
   --color-discord-deep-gray: #2e2e34;
-  --color-button-gray: #484950;
+  --color-discord-button: #484950;
+  --color-discord-outline: hsl(240 calc(1 * 4%) 60.784% / 0.1);
+  --color-button-secondary: hsl(240 calc(1 * 4%) 60.784% / 0.2);
+  --color-button-secondary-hover: #414248;
+  --color-button-active: hsl(240 calc(1 * 4%) 60.784% / 0.2);
+  --color-button-active-hover: #34353a;
+
+  --color-discord-button-text: #adaeb4;
+  --color-discord-navigation: #2c2d32;
+  --color-discord-content: #323339;
+
+  --color-discord-mobile-button: #61686f;
+  --color-discord-mobile-button-hover: #6b737b;
 
   --radius-5xl: 2.5rem;
   --radius-6xl: 3rem;
+
+  --spacing-41: calc(var(--spacing) * 41);
+  --spacing-42: calc(var(--spacing) * 42);
+  --spacing-46: calc(var(--spacing) * 46);
+
+  --spacing-5\.5: calc(var(--spacing) * 5.5);
+  --spacing-9\.5: calc(var(--spacing) * 9.5);
+
+  --font-semibold: 500;
+  --font-size-sm: 16px;
 
   --breakpoint-xs: 320px;
 }
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  @apply bg-discord-black text-amber-50;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
