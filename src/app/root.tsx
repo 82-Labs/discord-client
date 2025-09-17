@@ -9,6 +9,7 @@ import {
   ScrollRestoration,
 } from "react-router";
 import { queryClient } from "./providers/query";
+import { Toaster } from "~/shared/ui/sonner";
 import "./app.css";
 
 export const links: LinksFunction = () => [
@@ -33,7 +34,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -46,6 +47,7 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
+      <Toaster />
     </QueryClientProvider>
   );
 }
