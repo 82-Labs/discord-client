@@ -16,8 +16,6 @@ import { LogoIcon } from "~/shared/ui/icons/logo-icon";
 export default function NotificationHeader() {
   const location = useLocation();
 
-  console.log(location.pathname);
-
   return (
     <header className="relative hidden md:flex items-center justify-center bg-discord-black text-sm h-8 text-gray-300/80">
       <div className="flex items-center gap-2">
