@@ -5,7 +5,7 @@ import { Tooltip, TooltipTrigger, TooltipContent } from "~shared/ui/tooltip";
 
 import Slot, { triggers, contents } from "./tabs-slot";
 
-import { FriendsIcon } from "./icons/friends-icon";
+import { FriendsIcon } from "~shared/ui/icons/friends-icon";
 import { MailBoxIcon } from "./icons/mail-box-icon";
 
 export function SendMailBox() {
@@ -20,8 +20,8 @@ export function SendMailBox() {
         <div>
           <Tooltip>
             <TooltipTrigger
-              className="flex justify-center items-center w-14 h-8 bg-button-gray rounded-md px-2 text-white
-            hover:bg-button-gray/80 transition-all delay-200 cursor-pointer
+              className="flex justify-center items-center w-14 h-8 bg-discord-button rounded-md px-2 text-white
+            hover:bg-discord-button/80 transition-all delay-200 cursor-pointer
             "
             >
               <Link to="" className="flex items-center gap-2">
@@ -30,7 +30,7 @@ export function SendMailBox() {
                 <span className="text-xs">0</span>
               </Link>
             </TooltipTrigger>
-            <TooltipContent className="p-2 text-sm bg-button-gray h-full border-none **:*:bg-button-gray  **:*:fill-button-gray">
+            <TooltipContent className="p-2 text-sm bg-discord-button h-full border-none **:*:bg-discord-button  **:*:fill-discord-button">
               <span>친구 요청 보기</span>
             </TooltipContent>
           </Tooltip>
