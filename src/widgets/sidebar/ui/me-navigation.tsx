@@ -1,7 +1,7 @@
 import { NavLink } from "react-router";
 
-import AddFriendDialog from "~features/friend/friendship/ui/add-friend";
 import MeHeader from "./me-header";
+import AddFriendDialog from "~features/chatting/ui/start-chatting";
 
 import { cn } from "~shared/lib";
 import { FriendsIcon } from "~shared/ui/icons/friends-icon";

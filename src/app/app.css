@@ -11,11 +11,23 @@
   --color-light-discord: #93a7fd;
   --color-kakao: #fee403;
 
+  --color-discord-text: #d1d2d5;
+
+  --color-discord-input: #1e1f22;
+  --color-discord-input-focus: #7bb0f5;
+
   --color-discord-black: #2c2d32;
   --color-discord-gray: #393a41;
   --color-discord-deep-gray: #2e2e34;
   --color-discord-button: #484950;
   --color-discord-outline: hsl(240 calc(1 * 4%) 60.784% / 0.1);
+
+  --color-discord-tab-active: #46464d;
+  --color-discord-tab-hover: #3a3b40;
+  --color-discord-tab-pointer-hover: #4654c0;
+  --color-discord-tab-pointer-active: #3b428a;
+  --color-discord-tab-pointer-text: #93a7fd;
+
   --color-button-secondary: hsl(240 calc(1 * 4%) 60.784% / 0.2);
   --color-button-secondary-hover: #414248;
   --color-button-active: hsl(240 calc(1 * 4%) 60.784% / 0.2);
