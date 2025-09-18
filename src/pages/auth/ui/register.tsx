@@ -1,7 +1,7 @@
-import { useUsername } from "~/features/auth/register/hooks/use-username";
-import { useRegister } from "~features/auth/register/hooks/use-register";
+import { useUsername } from "~entities/user/lib";
+import { useRegister } from "~features/auth/register/api";
 
-export default function RegisterPage() {
+export function RegisterPage() {
   const { mutate: handleRegister, isPending } = useRegister();
   const {
     register,
@@ -53,7 +53,7 @@ export default function RegisterPage() {
           <div className="text-sm text-gray-300/80 my-3">
             "계정 만들기"를 클릭하면 Discord의{" "}
             <a
-              href="//discord.com/terms"
+              href="/discord.com/terms"
               rel="noreferrer noopener"
               target="_blank"
               className="text-blue-300/80"
@@ -62,7 +62,7 @@ export default function RegisterPage() {
             </a>
             에 동의하며{" "}
             <a
-              href="//discord.com/privacy"
+              href="/discord.com/privacy"
               rel="noreferrer noopener"
               target="_blank"
               className="text-blue-300/80"

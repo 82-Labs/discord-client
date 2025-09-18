@@ -1,6 +1,6 @@
-import DirectMessengerTabs from "~widgets/direct-messenger/ui/direct-messenger-tabs";
+import { DirectMessengerTabs } from "~widgets/direct-messenger/ui";
 
-export default function DirectMessengerPage() {
+export function DirectMessengerPage() {
   return (
     <div className="h-full w-full bg-discord-content">
       <DirectMessengerTabs />

@@ -8,7 +8,7 @@ import {
   DialogTrigger,
 } from "~shared/ui/dialog";
 
-export default function StartChattingDialog() {
+export function StartChattingDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>

@@ -1,4 +1,4 @@
-import DirectMessengerTabs from "~/widgets/direct-messenger/ui/direct-messenger-tabs";
+import { DirectMessengerTabs } from "~widgets/direct-messenger/ui";
 
 export default function DirectMessenger() {
   return (

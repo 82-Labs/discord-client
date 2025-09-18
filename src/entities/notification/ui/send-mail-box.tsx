@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~shared/ui/tabs";
 import { Tooltip, TooltipTrigger, TooltipContent } from "~shared/ui/tooltip";
 
-import Slot, { triggers, contents } from "./tabs-slot";
+import { Slot, triggers, contents } from "./tabs-slot";
 
 import { FriendsIcon } from "~shared/ui/icons/friends-icon";
 import { MailBoxIcon } from "./icons/mail-box-icon";

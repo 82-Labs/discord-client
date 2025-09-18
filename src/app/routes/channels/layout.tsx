@@ -1,15 +1,15 @@
 import { Outlet } from "react-router";
+import { useViewport } from "~shared/hooks/use-viewport";
 
-import NotificationsHeader from "~widgets/notifications/ui/channels-header";
-import { useViewport } from "~/shared/hooks/use-viewport";
-import { SplitPanel } from "~/shared/ui/split";
-import Sidebar from "~/widgets/sidebar/ui/sidebar";
+import { SplitPanel } from "~shared/ui/split";
+import { Sidebar } from "~widgets/sidebar/ui";
+import { NotificationHeader } from "~widgets/notifications/ui";
 
 export default function ChannelsLayout() {
   const { isMobile } = useViewport();
   return (
     <div className="h-screen flex flex-col">
-      <NotificationsHeader />
+      <NotificationHeader />
       <div className="flex-1">
         <SplitPanel handleSize={2}>
           <SplitPanel.Pane

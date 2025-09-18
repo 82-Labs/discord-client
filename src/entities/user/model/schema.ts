@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { usernameSchema } from "~/entities/user/model/user";
+import { usernameSchema } from "./user";
 
 export const registerSchema = z.object({
   username: usernameSchema,

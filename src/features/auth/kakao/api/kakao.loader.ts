@@ -1,7 +1,10 @@
 import { type LoaderFunctionArgs, redirect } from "react-router";
 import { z } from "zod";
-import { accessTokenCookie, refreshTokenCookie } from "~/shared/server/cookie";
 import { requestKy } from "~shared/api/ky";
+import {
+  accessTokenCookie,
+  refreshTokenCookie,
+} from "~shared/lib/utils/cookie";
 
 const KakaoLoginResponseSchema = z.object({
   accessToken: z.string().min(10),

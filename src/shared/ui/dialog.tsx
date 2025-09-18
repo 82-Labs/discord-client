@@ -1,7 +1,7 @@
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { XIcon } from "lucide-react";
 
-import { cn } from "~shared/lib/cn";
+import { cn } from "~/shared/lib/utils/cn";
 
 function Dialog({
   ...props

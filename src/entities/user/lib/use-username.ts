@@ -1,12 +1,13 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { usernameSchema } from "~entities/user/model/user";
+import { usernameSchema } from "~entities/user/model";
 
-const registerSchema = z.object({
+const usernameFormSchema = z.object({
   username: usernameSchema,
 });
-type RegisterForm = z.infer<typeof registerSchema>;
+
+type UsernameForm = z.infer<typeof usernameFormSchema>;
 
 export const useUsername = () => {
   const {
@@ -16,13 +17,14 @@ export const useUsername = () => {
     reset,
     formState: { errors, isValid, isSubmitting },
     watch,
-  } = useForm<RegisterForm>({
-    resolver: zodResolver(registerSchema),
+  } = useForm<UsernameForm>({
+    resolver: zodResolver(usernameFormSchema),
     mode: "onChange",
     defaultValues: { username: "" },
   });
 
   const usernameValue = watch("username");
+
   const handleUsernameInput: React.ChangeEventHandler<HTMLInputElement> = (
     e,
   ) => {
@@ -32,11 +34,25 @@ export const useUsername = () => {
       setValue("username", sanitized, { shouldValidate: true });
   };
 
+  const validateUsername = (username: string) => {
+    const result = usernameSchema.safeParse(username);
+    return {
+      isValid: result.success,
+      error: result.error?.issues[0]?.message,
+    };
+  };
+
+  const sanitizeUsername = (input: string) => {
+    return input.toLowerCase().replace(/[^a-z0-9_]/g, "");
+  };
+
   return {
     register,
     formState: { errors, isValid, isSubmitting },
     handleSubmit,
     handleUsernameInput,
     reset,
+    validateUsername,
+    sanitizeUsername,
   };
 };

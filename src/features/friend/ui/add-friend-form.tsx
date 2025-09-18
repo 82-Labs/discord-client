@@ -1,14 +1,13 @@
 import { useState } from "react";
 
 import { useAddFriend } from "../api/use-add-friend";
-import { useUsername } from "~features/auth/register/hooks/use-username";
+import { useUsername } from "~entities/user/lib";
 
-import { cn } from "~shared/lib";
-
+import { cn } from "~shared/lib/utils/cn";
 import { Button } from "~shared/ui/button";
 import { Input } from "~shared/ui/input";
 
-export default function AddFriendForm() {
+export function AddFriendForm() {
   const [sendUsername, setSendUsername] = useState("");
 
   const {

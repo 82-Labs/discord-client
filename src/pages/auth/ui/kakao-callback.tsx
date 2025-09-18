@@ -1,4 +1,4 @@
-export default function KakaoCallbackPage() {
+export function KakaoCallbackPage() {
   return (
     <main className="min-h-screen w-full bg-[#0b0d12] text-zinc-100 flex items-center justify-center p-6">
       <div className="relative w-full max-w-sm">

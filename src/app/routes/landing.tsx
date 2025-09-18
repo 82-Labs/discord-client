@@ -1,4 +1,4 @@
-import LandingPage from "~pages/landing/ui";
+import { LandingPage } from "~pages/landing/ui";
 
 export function meta() {
   return [

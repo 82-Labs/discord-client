@@ -1,5 +1,5 @@
-import KakaoCallbackPage from "~/pages/auth/kakao-callback";
-import { kakaoLoader } from "~features/auth/kakao/api/kakao.loader";
+import { kakaoLoader } from "~features/auth/kakao/api";
+import { KakaoCallbackPage } from "~pages/auth/ui";
 
 import type { Route } from "./+types/kakao-callback";
 

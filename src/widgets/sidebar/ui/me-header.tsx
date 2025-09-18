@@ -1,6 +1,6 @@
 import { SearchIcon, UserRoundPlusIcon } from "lucide-react";
 
-export default function MeHeader() {
+export function MeHeader() {
   return (
     <div className="flex flex-col md:hidden w-full p-2 gap-2">
       <h1 className="font-semibold"> 메시지</h1>

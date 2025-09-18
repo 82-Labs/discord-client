@@ -237,3 +237,5 @@ export const NAVIGATION_LINKS: NavigationLink[] = [
     type: "link",
   },
 ];
+
+export type { NavigationLink, PopoverSection, Link };

@@ -1,6 +1,7 @@
 import { DotIcon } from "lucide-react";
-import AddFriendForm from "~/features/friend/ui/add-friend-form";
-import { FriendsIcon } from "~/shared/ui/icons/friends-icon";
+
+import { AddFriendForm } from "~features/friend/ui";
+import { FriendsIcon } from "~shared/ui/icons";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~shared/ui/tabs";
 
 const tabs = [
@@ -22,7 +23,7 @@ const tabs = [
   },
 ];
 
-export default function DirectMessengerTabs() {
+export function DirectMessengerTabs() {
   return (
     <div className="flex items-center h-12.5 bg-discord-content w-full border border-discord-outline border-l-0 border-bo">
       <Tabs defaultValue="add-friend" className="h-8 w-full">

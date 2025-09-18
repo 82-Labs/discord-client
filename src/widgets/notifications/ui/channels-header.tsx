@@ -1,19 +1,18 @@
 import { Link, useLocation } from "react-router";
-
 import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
 } from "~/shared/ui/dropdown-menu";
-import { Tooltip, TooltipTrigger, TooltipContent } from "~/shared/ui/tooltip";
+import { Tooltip, TooltipTrigger, TooltipContent } from "~shared/ui/tooltip";
 
-import { SendMailBox } from "~/entities/notification/ui/send-mail-box";
-import { FriendsIcon } from "~/shared/ui/icons/friends-icon";
-import { MailBoxIcon } from "~/entities/notification/ui/icons/mail-box-icon";
-import { SupportIcon } from "~/entities/notification/ui/icons/support-icon";
-import { LogoIcon } from "~/shared/ui/icons/logo-icon";
+import { SendMailBox } from "~entities/notification/ui/send-mail-box";
+import { FriendsIcon } from "~shared/ui/icons/friends-icon";
+import { MailBoxIcon } from "~entities/notification/ui/icons/mail-box-icon";
+import { SupportIcon } from "~entities/notification/ui/icons/support-icon";
+import { LogoIcon } from "~shared/ui/icons/logo-icon";
 
-export default function NotificationHeader() {
+export function NotificationHeader() {
   const location = useLocation();
 
   return (

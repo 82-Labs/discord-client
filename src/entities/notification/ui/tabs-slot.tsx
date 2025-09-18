@@ -75,7 +75,7 @@ interface HeaderTabsContentProps {
   isNote: boolean;
 }
 
-export default function Slot({
+export function Slot({
   children,
   title,
   description,

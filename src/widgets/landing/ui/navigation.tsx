@@ -1,10 +1,10 @@
 import { Link } from "react-router";
-import { cn } from "~shared/lib";
-import NavigationList from "~widgets/landing/ui/navigation-list";
-import KakaoAuthButton from "~features/auth/kakao/ui/kakao-auth-button";
-import { useToggle } from "~shared/hooks/use-toggle";
 
-export default function Navigation() {
+import { NavigationList } from "~widgets/landing/ui/navigation-list";
+import { KakaoAuthButton } from "~features/auth/kakao/ui";
+import { useToggle } from "~shared/hooks/use-toggle";
+import { cn } from "~shared/lib/utils/cn";
+export function Navigation() {
   const { isOpen, toggle } = useToggle();
 
   return (
