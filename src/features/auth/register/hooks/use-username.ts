@@ -13,6 +13,7 @@ export const useUsername = () => {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors, isValid, isSubmitting },
     watch,
   } = useForm<RegisterForm>({
@@ -36,5 +37,6 @@ export const useUsername = () => {
     formState: { errors, isValid, isSubmitting },
     handleSubmit,
     handleUsernameInput,
+    reset,
   };
 };
