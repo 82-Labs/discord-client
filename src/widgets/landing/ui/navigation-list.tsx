@@ -1,9 +1,9 @@
 import { ChevronDownIcon } from "lucide-react";
 import React from "react";
 import { Link } from "react-router";
-import { useSelectMenu } from "~/pages/landing/lib/use-select-menu";
-import { NAVIGATION_LINKS } from "~shared/constants";
-import { cn } from "~/shared/lib";
+import { useSelectMenu } from "~shared/hooks";
+import { cn } from "~shared/lib/utils";
+import { NAVIGATION_LINKS } from "../config";
 
 interface NavigationListProps {
   type: "mobile" | "desktop";
@@ -11,7 +11,7 @@ interface NavigationListProps {
 
 const MIN_POPOVER_SECTIONS = 1;
 
-export default function NavigationList({ type }: NavigationListProps) {
+export function NavigationList({ type }: NavigationListProps) {
   const { selectedMenu, handleSelectMenu } = useSelectMenu();
 
   switch (type) {

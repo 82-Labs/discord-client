@@ -5,6 +5,6 @@ export default [
   route("/auth/kakao", "routes/auth/kakao-callback.tsx"),
   route("/auth/register", "routes/auth/register.tsx"),
   route("/channels", "routes/channels/layout.tsx", [
-    route("@me", "routes/channels/me.tsx"),
+    route("@me", "routes/channels/direct-messenger.tsx"),
   ]),
 ] satisfies RouteConfig;

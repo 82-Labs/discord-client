@@ -1,4 +1,4 @@
-import RegisterPage from "~pages/auth/register";
+import { RegisterPage } from "~/pages/auth/ui/register";
 import type { Route } from "./+types/register";
 
 export function meta(_: Route.MetaArgs) {

@@ -1,10 +1,10 @@
-import { NavLink } from "react-router";
 import { MessageCircleIcon } from "lucide-react";
+import { NavLink } from "react-router";
 
-import { cn } from "~shared/lib";
+import { cn } from "~shared/lib/utils/cn";
 import { LogoIcon } from "~shared/ui/icons/logo-icon";
 
-export default function NavigationList() {
+export function NavigationList() {
   return (
     <nav className="mt-3 md:mt-0 flex flex-col items-center gap-2.5 bg-discord-black min-w-20 flex-shrink-0">
       <div className="relative flex items-center justify-center w-20">

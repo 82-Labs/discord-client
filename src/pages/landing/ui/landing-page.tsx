@@ -1,6 +1,6 @@
-import Navigation from "~widgets/landing/ui/navigation";
+import { Navigation } from "~widgets/landing/ui";
 
-export default function LandingPage() {
+export function LandingPage() {
   return (
     <div className="h-screen bg-black">
       <Navigation />

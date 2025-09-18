@@ -8,7 +8,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-import { queryClient } from "./providers/query";
+import { queryClient } from "./providers";
 import { Toaster } from "~/shared/ui/sonner";
 import "./app.css";
 
