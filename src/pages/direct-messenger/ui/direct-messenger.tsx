@@ -1,9 +1,9 @@
-import { DirectMessengerTabs } from "~widgets/direct-messenger/ui";
+import { RelationshipTabs } from "~widgets/relationship/ui";
 
 export function DirectMessengerPage() {
   return (
-    <div className="h-full w-full bg-discord-content">
-      <DirectMessengerTabs />
+    <div className="flex h-full w-full bg-discord-content">
+      <RelationshipTabs />
     </div>
   );
 }
