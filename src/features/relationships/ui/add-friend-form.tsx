@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { useAddFriend } from "../api/use-add-friend";
+import { useAddFriend } from "~features/relationships/api";
 import { useUsername } from "~entities/user/lib";
 
 import { cn } from "~shared/lib/utils/cn";
