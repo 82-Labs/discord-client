@@ -19,7 +19,7 @@ export function NavigationList({ type }: NavigationListProps) {
       return (
         <ul
           className={cn(
-            "hidden lg:flex xl:gap-0.5  text-white text-xs xl:text-base relative",
+            "hidden lg:flex  xl:gap-0.5 ext-white text-xs lg:text-sm xl:text-base relative ",
           )}
         >
           {NAVIGATION_LINKS.map((link, index) => (

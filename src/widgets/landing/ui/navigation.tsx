@@ -4,16 +4,26 @@ import { NavigationList } from "~widgets/landing/ui/navigation-list";
 import { KakaoAuthButton } from "~features/auth/kakao/ui";
 import { useToggle } from "~shared/hooks/use-toggle";
 import { cn } from "~shared/lib/utils/cn";
+import { useScrolled } from "../lib/use-scolled";
 export function Navigation() {
   const { isOpen, toggle } = useToggle();
+  const isScrolled = useScrolled();
 
   return (
-    <nav className="flex justify-center items-end w-full pt-8 xl:h-20 xl:px-10">
+    <nav
+      className={cn(
+        "fixed md:absolute flex justify-center items-center w-full pt-8 md:pt-0 h-20 md:h-30 xl:px-10 z-20",
+        isScrolled && "bg-discord md:bg-transparent",
+      )}
+    >
       <Link to="/">
         <img
-          src="/logo.svg"
+          src={isScrolled ? "/logo_black.svg" : "/logo_white.svg"}
           alt="discord logo"
-          className="fixed top-4 left-4 md:top-10 md:left-9 w-full h-full max-w-[146px] max-h-[40px]"
+          className={cn(
+            "fixed top-5 left-4 md:top-10 md:left-9 w-full h-full max-w-[146px] max-h-[40px] ",
+            isScrolled && "bg-white rounded-lg px-2",
+          )}
           width={146}
           height={40}
         />
