@@ -10,6 +10,8 @@ import {
 } from "react-router";
 import { queryClient } from "./providers";
 import { Toaster } from "~/shared/ui/sonner";
+import { NotFound } from "~/widgets/error/ui/not-found";
+import { FailedFetch } from "~/widgets/error/ui/failed-fetch";
 import "./app.css";
 
 export const links: LinksFunction = () => [
@@ -57,6 +59,20 @@ interface ErrorBoundaryProps {
 }
 
 export function ErrorBoundary({ error }: ErrorBoundaryProps) {
+  if (isRouteErrorResponse(error) && error.status === 404) {
+    return <NotFound />;
+  }
+
+  if (
+    error instanceof Error &&
+    (error.message.includes("fetch") ||
+      error.message.includes("network") ||
+      error.message.includes("Failed to fetch") ||
+      error.name === "TypeError")
+  ) {
+    return <FailedFetch />;
+  }
+
   let message = "Oops!";
   let details = "An unexpected error occurred.";
   let stack: string | undefined;
