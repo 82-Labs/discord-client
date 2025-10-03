@@ -7,30 +7,18 @@ interface SentRequestsProps {
     type: "received" | "sent";
     requestId: string;
   }) => React.ReactNode;
-  searchValue: string;
 }
 
-export function SentRequests({
-  renderActions,
-  searchValue,
-}: SentRequestsProps) {
+export function SentRequests({ renderActions }: SentRequestsProps) {
   const { data: sentRequests } = useGetSentRequests();
-
-  const filteredSentRequests = sentRequests?.filter((request) =>
-    request.receiverUsername.toLowerCase().includes(searchValue.toLowerCase()),
-  );
-
   return (
     <div>
-      {(filteredSentRequests?.length ?? 0) > 0 && (
+      {(sentRequests?.length ?? 0) > 0 && (
         <>
-          <FriendRequestHeader
-            type="sent"
-            count={filteredSentRequests?.length ?? 0}
-          />
+          <FriendRequestHeader type="sent" count={sentRequests?.length ?? 0} />
 
           <ul>
-            {filteredSentRequests?.map((request) => (
+            {sentRequests?.map((request) => (
               <RequestItem
                 key={request.id}
                 type="sent"

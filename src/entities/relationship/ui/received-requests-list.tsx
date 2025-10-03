@@ -7,30 +7,21 @@ interface ReceivedRequestsProps {
     type: "received" | "sent";
     requestId: string;
   }) => React.ReactNode;
-  searchValue: string;
 }
 
-export function ReceivedRequests({
-  renderActions,
-  searchValue,
-}: ReceivedRequestsProps) {
+export function ReceivedRequests({ renderActions }: ReceivedRequestsProps) {
   const { data: receivedRequests } = useGetReceivedRequests();
-
-  const filteredReceivedRequests = receivedRequests?.filter((request) =>
-    request.senderUsername.toLowerCase().includes(searchValue.toLowerCase()),
-  );
-
   return (
     <div>
-      {(filteredReceivedRequests?.length ?? 0) > 0 && (
+      {(receivedRequests?.length ?? 0) > 0 && (
         <>
           <FriendRequestHeader
             type="received"
-            count={filteredReceivedRequests?.length ?? 0}
+            count={receivedRequests?.length ?? 0}
           />
 
           <ul>
-            {filteredReceivedRequests?.map((request) => (
+            {receivedRequests?.map((request) => (
               <RequestItem
                 key={request.id}
                 type="received"
