@@ -31,7 +31,7 @@ function normalizeToken(raw: string): string | null {
 }
 
 export const requestKy = ky.create({
-  prefixUrl: "http://localhost:8080/api/v1",
+  prefixUrl: import.meta.env.BASE_URL,
   hooks: {
     beforeRequest: [
       (request) => {

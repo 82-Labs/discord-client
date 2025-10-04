@@ -6,7 +6,7 @@ WORKDIR /app
 
 FROM base AS deps
 COPY pnpm-lock.yaml package.json ./
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --no-frozen-lockfile
 
 FROM base AS build
 COPY . .
@@ -15,7 +15,7 @@ RUN pnpm run build
 
 FROM base AS prod-deps
 COPY pnpm-lock.yaml package.json ./
-RUN pnpm install --frozen-lockfile --prod
+RUN pnpm install --no-frozen-lockfile --prod
 
 FROM node:20-alpine AS runner
 ENV PNPM_HOME="/root/.local/share/pnpm"
