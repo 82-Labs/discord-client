@@ -1,11 +1,12 @@
-node_modules
 .DS_Store
+/node_modules/
+
+# React Router
+/.react-router/
+/build/
+
 .env
-.local.env
-.production.env
+.env.development
+.env.production
+
 .pnpm-store
-build
-.react-router
-docker-compose.yml
-README.md
-LICENSE
