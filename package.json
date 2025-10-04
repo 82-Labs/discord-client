@@ -23,6 +23,7 @@
     "@react-router/serve": "^7.8.2",
     "@tanstack/react-query": "^5.87.4",
     "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "isbot": "^5.1.30",
     "js-cookie": "^3.0.5",
     "ky": "^1.10.0",
@@ -33,6 +34,7 @@
     "react-hook-form": "^7.62.0",
     "react-router": "^7.8.2",
     "sonner": "^2.0.7",
+    "tailwind-merge": "^3.3.1",
     "zod": "^4.1.9"
   },
   "devDependencies": {
@@ -43,8 +45,6 @@
     "@types/node": "^24.3.1",
     "@types/react": "^19.1.12",
     "@types/react-dom": "^19.1.9",
-    "clsx": "^2.1.1",
-    "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.13",
     "tw-animate-css": "^1.3.8",
     "typescript": "^5.9.2",
