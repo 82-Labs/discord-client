@@ -31,7 +31,7 @@ function normalizeToken(raw: string): string | null {
 }
 
 export const requestKy = ky.create({
-  prefixUrl: import.meta.env.BASE_URL,
+  prefixUrl: (import.meta as any).env?.VITE_SERVER_URL ?? "",
   hooks: {
     beforeRequest: [
       (request) => {

@@ -11,10 +11,10 @@ export const RELATIONSHIP_TABS = [
     label: "대기중",
     value: "pending",
   },
-  {
-    label: "추천",
-    value: "recommend",
-  },
+  // {
+  //   label: "추천",
+  //   value: "recommend",
+  // },
   {
     label: "친구 추가하기",
     value: "add-friend",
