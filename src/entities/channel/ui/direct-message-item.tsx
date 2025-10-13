@@ -26,7 +26,7 @@ export function DirectMessageItem({
       <div className="relative flex items-center mr-3 h-full ">
         {filteredUsers.map((user, index) => (
           <div
-            key={user.id}
+            key={`avatar-${user.id}`}
             className={cn(
               "relative",
               index > 0 ? "-ml-3.5 -mb-1.5" : "-mt-1.5",
@@ -48,7 +48,7 @@ export function DirectMessageItem({
       <div className="flex flex-col min-w-0 flex-1">
         <p className="text-discord-text truncate">
           {filteredUsers.map((user, index) => (
-            <span key={user.id}>
+            <span key={`nickname-${user.id}`}>
               {user.nickname}
               {index < filteredUsers.length - 1 && ", "}
             </span>
