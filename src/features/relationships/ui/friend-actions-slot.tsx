@@ -10,6 +10,7 @@ import {
 } from "~shared/ui/dropdown-menu";
 import { useEnsureDirectMessage } from "../api/use-ensure-direct-message";
 import { useUserStore } from "~features/user/model/use-user-store";
+import { useDeleteFriend } from "../api/use-delete-friend";
 
 interface FriendActionsProps {
   userId: number;
@@ -19,15 +20,18 @@ interface FriendActionsProps {
 export function FriendActionsSlot({ userId, username }: FriendActionsProps) {
   const { userId: currentUserId } = useUserStore();
 
-  const ensureDirectMessage = useEnsureDirectMessage();
+  const ensureDirectMessageMutation = useEnsureDirectMessage();
+  const deleteFriendMutation = useDeleteFriend();
 
   return (
     <div>
       <Button
         type="button"
         variant="ghost"
-        disabled={ensureDirectMessage.isPending}
-        onClick={() => ensureDirectMessage.mutate([currentUserId, userId])}
+        disabled={ensureDirectMessageMutation.isPending}
+        onClick={() =>
+          ensureDirectMessageMutation.mutate([currentUserId, userId])
+        }
         className="group-hover:bg-discord-black hover:bg-discord-black rounded-full mr-3 cursor-pointer"
       >
         <MessageCircleIcon className="w-4 h-4 text-discord-text fill-discord-text" />
@@ -53,7 +57,10 @@ export function FriendActionsSlot({ userId, username }: FriendActionsProps) {
             음성 통화 시작하기
           </DropdownMenuItem>
           <DropdownMenuItem
-            onClick={() => {}}
+            disabled={deleteFriendMutation.isPending}
+            onClick={() => {
+              deleteFriendMutation.mutate(username);
+            }}
             className="cursor-pointer text-red-400 focus:bg-red-400/10 focus:text-red-400"
           >
             친구 삭제하기
