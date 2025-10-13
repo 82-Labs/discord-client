@@ -17,7 +17,7 @@ export function FriendItem({
   actionsSlot,
 }: FriendItemProps) {
   return (
-    <li className="group flex justify-between items-center h-15 ml-4 hover:bg-discord-gray rounded-md px-2 border-t border-discord-outline">
+    <li className="group flex justify-between items-center h-15 mx-4 hover:bg-discord-gray rounded-md px-2 border-t border-discord-outline">
       <div className="flex items-center">
         <div className="relative">
           <img

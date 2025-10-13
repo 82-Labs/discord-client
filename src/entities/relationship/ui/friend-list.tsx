@@ -4,11 +4,17 @@ import { FriendHeader } from "./friend-header";
 import { FriendItem } from "./friend-item";
 import { SearchFriend } from "./search-friend";
 
+type RenderActions = (args: {
+  userId: number;
+  username: string;
+}) => React.ReactNode;
+
 interface FriendListProps {
   type: "online" | "all";
+  renderActions: RenderActions;
 }
 
-export function FriendList({ type }: FriendListProps) {
+export function FriendList({ type, renderActions }: FriendListProps) {
   const { searchValue, handleSearch } = useFriendSearch();
   const { data: friends } = useGetFriends();
 
@@ -35,6 +41,10 @@ export function FriendList({ type }: FriendListProps) {
               "https://images-eds-ssl.xboxlive.com/image?url=4rt9.lXDC4H_93laV1_eHHFT949fUipzkiFOBH3fAiZZUCdYojwUyX2aTonS1aIwMrx6NUIsHfUHSLzjGJFxxsG72wAo9EWJR4yQWyJJaDaK1XdUso6cUMpI9hAdPUU_FNs11cY1X284vsHrnWtRw7oqRpN1m9YAg21d_aNKnIo-&format=source&h=210"
             }
             {...friend}
+            actionsSlot={renderActions({
+              userId: friend.userId,
+              username: friend.username,
+            })}
           />
         ))}
       </ul>
