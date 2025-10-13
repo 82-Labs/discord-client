@@ -3,4 +3,5 @@ export const QUERY_KEYS = {
   FRIEND_SENT_REQUESTS: "friend-sent-requests",
   FRIENDS: "friends",
   USER: "user",
+  DIRECT_MESSAGES: "direct-messages",
 };

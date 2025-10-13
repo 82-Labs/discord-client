@@ -1,12 +1,19 @@
+import { cn } from "~/shared/lib/utils";
 import type { FriendStatus } from "~entities/relationship/api/use-get-friends";
 
 type UserStatusProps = {
   status: FriendStatus;
+  className?: string;
 };
 
-export function UserStatusBadge({ status }: UserStatusProps) {
+export function UserStatusBadge({ status, className }: UserStatusProps) {
   return (
-    <div className="absolute right-2 -bottom-0.5 flex items-center justify-center w-4 h-4 rounded-full bg-discord-content">
+    <div
+      className={cn(
+        "absolute right-2 -bottom-0.5 flex items-center justify-center w-4 h-4 rounded-full bg-discord-content",
+        className,
+      )}
+    >
       {(status === "ONLINE" || status === "NONE") && (
         <div className="bg-green-600 rounded-full w-2.5 h-2.5" />
       )}
