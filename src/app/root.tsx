@@ -8,10 +8,13 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-import { queryClient } from "./providers";
-import { Toaster } from "~/shared/ui/sonner";
-import { NotFound } from "~/widgets/error/ui/not-found";
-import { FailedFetch } from "~/widgets/error/ui/failed-fetch";
+
+import { NotFound } from "~widgets/error/ui/not-found";
+import { FailedFetch } from "~widgets/error/ui/failed-fetch";
+
+import { queryClient } from "~shared/api/query";
+import { Toaster } from "~shared/ui/sonner";
+
 import "./app.css";
 
 export const links: LinksFunction = () => [

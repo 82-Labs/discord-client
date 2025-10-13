@@ -30,8 +30,14 @@ function normalizeToken(raw: string): string | null {
   return null;
 }
 
+interface ImportMeta {
+  env: {
+    VITE_SERVER_URL: string;
+  };
+}
+
 export const requestKy = ky.create({
-  prefixUrl: (import.meta as any).env?.VITE_SERVER_URL ?? "",
+  prefixUrl: (import.meta as unknown as ImportMeta).env?.VITE_SERVER_URL ?? "",
   hooks: {
     beforeRequest: [
       (request) => {
