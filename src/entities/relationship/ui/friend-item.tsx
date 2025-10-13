@@ -18,7 +18,7 @@ export function FriendItem({
 }: FriendItemProps) {
   return (
     <li className="group flex justify-between items-center h-15 mx-4 hover:bg-discord-gray rounded-md px-2 border-t border-discord-outline">
-      <div className="flex items-center">
+      <div className="flex items-center min-w-40">
         <div className="relative">
           <img
             src={avatar}
@@ -31,7 +31,7 @@ export function FriendItem({
         </div>
 
         <div className="flex flex-col">
-          <div className="flex items-end gap-2">
+          <div className="flex items-end gap-2 ">
             <strong>{nickname}</strong>
             <span className="hidden group-hover:block text-sm text-discord-text">
               {username}

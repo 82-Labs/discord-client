@@ -24,7 +24,7 @@ export function FriendActionsSlot({ userId, username }: FriendActionsProps) {
   const deleteFriendMutation = useDeleteFriend();
 
   return (
-    <div>
+    <div className="flex">
       <Button
         type="button"
         variant="ghost"
