@@ -9,6 +9,8 @@ import { FriendRequestActionsSlot } from "~features/relationships/ui/friend-requ
 import { FriendsIcon } from "~shared/ui/icons";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~shared/ui/tabs";
 import { RELATIONSHIP_TABS } from "./relationship-tabs.config";
+import { FriendList } from "~entities/relationship/ui/friend-list";
+import { FriendActionsSlot } from "~features/relationships/ui/friend-actions-slot";
 
 export function RelationshipTabs() {
   const { data: friendRequests } = useGetReceivedRequests();
@@ -47,8 +49,18 @@ export function RelationshipTabs() {
         </TabsList>
 
         <div className="flex">
-          <TabsContent value="online"></TabsContent>
-          <TabsContent value="all"></TabsContent>
+          <TabsContent value="online">
+            <FriendList
+              type="online"
+              renderActions={(request) => <FriendActionsSlot {...request} />}
+            />
+          </TabsContent>
+          <TabsContent value="all">
+            <FriendList
+              type="all"
+              renderActions={(request) => <FriendActionsSlot {...request} />}
+            />
+          </TabsContent>
           <TabsContent value="pending">
             <FriendRequest
               renderActions={(request) => (
@@ -56,7 +68,7 @@ export function RelationshipTabs() {
               )}
             />
           </TabsContent>
-          <TabsContent value="recommend"></TabsContent>
+          {/* <TabsContent value="recommend"></TabsContent> */}
           <TabsContent value="add-friend" className="w-full">
             <AddFriendForm />
           </TabsContent>

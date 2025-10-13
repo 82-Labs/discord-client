@@ -1,7 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { extractErrorMessage } from "~shared/api/error";
-import { queryClient } from "~app/providers";
+import { queryClient } from "~shared/api/query";
+
 import { requestKy } from "~shared/api/ky";
 import { QUERY_KEYS } from "~shared/api/query-keys";
 

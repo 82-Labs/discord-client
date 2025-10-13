@@ -1,12 +1,14 @@
 import { useGetReceivedRequests } from "../api/use-get-received-requests";
-import { FriendRequestHeader } from "./friend-request-header";
+import { FriendHeader } from "./friend-header";
 import { RequestItem } from "./request-item";
 
+export type RenderActions = (args: {
+  type: "received" | "sent";
+  requestId: string;
+}) => React.ReactNode;
+
 interface ReceivedRequestsProps {
-  renderActions?: (args: {
-    type: "received" | "sent";
-    requestId: string;
-  }) => React.ReactNode;
+  renderActions?: RenderActions;
   searchValue: string;
 }
 
@@ -24,7 +26,7 @@ export function ReceivedRequests({
     <div>
       {(filteredReceivedRequests?.length ?? 0) > 0 && (
         <>
-          <FriendRequestHeader
+          <FriendHeader
             type="received"
             count={filteredReceivedRequests?.length ?? 0}
           />

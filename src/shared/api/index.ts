@@ -1,1 +1,0 @@
-export { requestKy } from "./ky";

@@ -1,12 +1,10 @@
 import { useGetSentRequests } from "../api/use-get-sent-requests";
-import { FriendRequestHeader } from "./friend-request-header";
+import { FriendHeader } from "./friend-header";
+import type { RenderActions } from "./received-requests-list";
 import { RequestItem } from "./request-item";
 
 interface SentRequestsProps {
-  renderActions?: (args: {
-    type: "received" | "sent";
-    requestId: string;
-  }) => React.ReactNode;
+  renderActions?: RenderActions;
   searchValue: string;
 }
 
@@ -24,10 +22,7 @@ export function SentRequests({
     <div>
       {(filteredSentRequests?.length ?? 0) > 0 && (
         <>
-          <FriendRequestHeader
-            type="sent"
-            count={filteredSentRequests?.length ?? 0}
-          />
+          <FriendHeader type="sent" count={filteredSentRequests?.length ?? 0} />
 
           <ul>
             {filteredSentRequests?.map((request) => (

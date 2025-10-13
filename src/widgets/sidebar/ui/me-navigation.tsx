@@ -46,7 +46,7 @@ export function MyNavigation() {
         </li>
         <li className="w-full px-2.5 py-1 h-9.5 ">
           <NavLink
-            to="/channels/store"
+            to="/channels/shop"
             className={({ isActive }) =>
               cn(
                 "flex items-center gap-3 w-full pl-2.5 py-2 rounded-md hover:bg-button-active-hover transition-all duration-200 overflow-hidden",
